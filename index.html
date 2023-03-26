@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Choose Your Astronaut</title>
+	<title>Choose Your Astronaut</title> <!-- The title of the page - this is not the title displayed  -->
+
+	<!--	This is the style of stuff and defines how it looks, body is the main page, container is the grid of images,
+	image is each indiviudal image, video is the open video, close-button is the button and unsurprisingly title is the title-->
 	<style>
 		body {
 			margin: 0;
 			padding: 0;
         	height: 89vh;
+			background-color: rgb(80, 80, 80); /* background colour */
             overflow: hidden; /* Hide scroll bars */
 			caret-color: transparent;
 		}
@@ -16,7 +20,7 @@
 			grid-template-rows: repeat(2, 1fr);
 			gap: 20px;
 			width: 100%;
-			height: 100%; /* Account for title height */
+			height: 100%;
 			padding: 20px;
 			box-sizing: border-box;
 			caret-color: transparent;
@@ -43,15 +47,15 @@
 			top: 20px;
             right: 20px;
             font-size: 36px;
-            color: #333;
+            color: #333; /* Close button colour */
 			z-index: 999;
 			caret-color: transparent;
 			cursor: pointer;
 		}
         .title {
 			height: 100px;
-			background-color: #333;
-			color: #fff;
+			background-color: #333; /* title box colour*/
+			color: #fff; /* Test colour */
 			display: flex;
             font-size: 36px;
 			align-items: center;
@@ -64,20 +68,27 @@
 </head>
 <body>
     <div class="title">
-	<h1>Choose Your Astronaut</h1>
+	<h1>Choose Your Astronaut</h1> <!--  The title that is displaced  -->
 	</div>
+
+	<!-- This is all of your images and videos from top left along and down src is the images source, 
+		upload images and videos into the same folder as the index.html and add here, same process with the videos -->
 	<div class="container">
 		<img src="https://placehold.it/500x300" alt="Image 1" class="image" onclick="openVideo('Media1.mp4')">
-    	<img src="space.jpg" alt="Image 1" class="image" onclick="openVideo('video.mp4')">
-        <img src="https://placehold.it/500x300" alt="Image 1" class="image" onclick="openVideo('video.mp4')">
-        <img src="https://placehold.it/500x300" alt="Image 1" class="image" onclick="openVideo('video.mp4')">
-        <img src="https://placehold.it/500x300" alt="Image 1" class="image" onclick="openVideo('video.mp4')">
-		<img src="https://placehold.it/500x300" alt="Image 2" class="image" onclick="openVideo('video.mp4')">
+    	<img src="space.jpg" alt="Image 2" class="image" onclick="openVideo('video.mp4')">
+        <img src="https://placehold.it/500x300" alt="Image 3" class="image" onclick="openVideo('video.mp4')">
+        <img src="https://placehold.it/500x300" alt="Image 4" class="image" onclick="openVideo('video.mp4')">
+        <img src="https://placehold.it/500x300" alt="Image 5" class="image" onclick="openVideo('video.mp4')">
+		<img src="https://placehold.it/500x300" alt="Image 6" class="image" onclick="openVideo('video.mp4')">
 		<video src="" id="video" controls autoplay onended="closeVideo()"></video>
 	</div>
+
+	<!--	This is the code - basically magic :)	-->
+
 	<script>
 		let currentVideo = null;
 		
+		// This opens a video 
 		function openVideo(videoUrl) {
 			if (currentVideo !== null) {
 				currentVideo.pause();
@@ -104,6 +115,7 @@
 
 		}
 		
+		// this closes the video
 		function closeVideo() {
 			currentVideo.pause();
 			currentVideo.currentTime = 0;
