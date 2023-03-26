@@ -26,8 +26,9 @@
 			caret-color: transparent;
 		}
 		.image {
-			width: 100%;
-			height: 100%;
+			width:500px;
+			height:350px;
+			object-fit: cover;
 			caret-color: transparent;
 			cursor: pointer;
 		}
@@ -74,12 +75,12 @@
 	<!-- This is all of your images and videos from top left along and down src is the images source, 
 		upload images and videos into the same folder as the index.html and add here, same process with the videos -->
 	<div class="container">
-		<img src="moon-landing-60582_1920-2.jpg" alt="Image 1" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
-    	<img src="space.jpg" alt="Image 2" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
-        <img src="moon-landing-60582_1920-2.jpg" alt="Image 3" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
-        <img src="moon-landing-60582_1920-2.jpg" alt="Image 4" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
-        <img src="moon-landing-60582_1920-2.jpg" alt="Image 5" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
-		<img src="moon-landing-60582_1920-2.jpg" alt="Image 6" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
+		<img src="moon-landing-60582_1920-2.jpg" alt="Image 1" class="image" onclick="openVideo('test.webm')">
+    	<img src="space.jpg" alt="Image 2" class="image" onclick="openVideo('test.webm')">
+        <img src="moon-landing-60582_1920-2.jpg" alt="Image 3" class="image" onclick="openVideo('test.webm')">
+        <img src="moon-landing-60582_1920-2.jpg" alt="Image 4" class="image" onclick="openVideo('test.webm')">
+        <img src="moon-landing-60582_1920-2.jpg" alt="Image 5" class="image" onclick="openVideo('test.webm')">
+		<img src="moon-landing-60582_1920-2.jpg" alt="Image 6" class="image" onclick="openVideo('test.webm')">
 		<video src="" id="video" controls autoplay onended="closeVideo()"></video>
 	</div>
 
