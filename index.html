@@ -9,8 +9,7 @@
 		body {
 			margin: 0;
 			padding: 0;
-        	height: 85vh;
-			margin-bottom: 30px;
+        		height: 100vh;
 			background-color: rgb(80, 80, 80); /* background colour */
             overflow: hidden; /* Hide scroll bars */
 			caret-color: transparent;
@@ -19,9 +18,7 @@
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: repeat(2, 1fr);
-			margin-top: 10px;
 			gap: 20px;
-			row-gap: 30px;
 			width: 100%;
 			height: 100%;
 			padding: 20px;
@@ -77,12 +74,12 @@
 	<!-- This is all of your images and videos from top left along and down src is the images source, 
 		upload images and videos into the same folder as the index.html and add here, same process with the videos -->
 	<div class="container">
-		<img src="moon-landing-60582_1920-2.jpg" alt="Image 1" class="image" onclick="openVideo('test.webm')">
-    	<img src="space.jpg" alt="Image 2" class="image" onclick="openVideo('test.webm')">
-        <img src="moon-landing-60582_1920-2.jpg" alt="Image 3" class="image" onclick="openVideo('test.webm')">
-        <img src="moon-landing-60582_1920-2.jpg" alt="Image 4" class="image" onclick="openVideo('test.webm')">
-        <img src="moon-landing-60582_1920-2.jpg" alt="Image 5" class="image" onclick="openVideo('test.webm')">
-		<img src="moon-landing-60582_1920-2.jpg" alt="Image 6" class="image" onclick="openVideo('test.webm')">
+		<img src="moon-landing-60582_1920-2.jpg" alt="Image 1" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
+    	<img src="space.jpg" alt="Image 2" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
+        <img src="moon-landing-60582_1920-2.jpg" alt="Image 3" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
+        <img src="moon-landing-60582_1920-2.jpg" alt="Image 4" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
+        <img src="moon-landing-60582_1920-2.jpg" alt="Image 5" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
+		<img src="moon-landing-60582_1920-2.jpg" alt="Image 6" class="image" onclick="openVideo('test.webm')" style="width:500px;height:350px;">
 		<video src="" id="video" controls autoplay onended="closeVideo()"></video>
 	</div>
 
