@@ -55,6 +55,10 @@
 			cursor: pointer;
 		}
 
+		video::-webkit-media-controls-fullscreen-button {
+			display: none;
+		}
+
 		video {
 			position: fixed;
 			top: 0;
@@ -257,18 +261,6 @@
 			video.style.display = 'block';
 
 			currentVideo = video;
-
-			// Add close button to the video player
-			let closeButton = document.createElement('div');
-			closeButton.className = 'close-button';
-			closeButton.innerHTML = '&#10006;';
-			closeButton.addEventListener('click', function () {
-				closeButton.remove();
-				closeButton = null;
-				closeVideo()
-			});
-			currentVideo.parentNode.appendChild(closeButton);
-
 		}
 
 		// this closes the video
