@@ -5,6 +5,9 @@
 
 	<!--	This is the style of stuff and defines how it looks, body is the main page, container is the grid of images,
 	image is each indiviudal image, video is the open video, close-button is the button and unsurprisingly title is the title-->
+
+	<!--	This is the style of stuff and defines how it looks, body is the main page, container is the grid of images,
+	image is each indiviudal image, video is the open video, close-button is the button and unsurprisingly title is the title-->
 	<style>
 		body {
 			margin: 0;
@@ -64,6 +67,15 @@
 			padding: 0 20px;
 			box-sizing: border-box;
 			caret-color: transparent;
+		}
+        /* Center the last two images */
+        .image:nth-child(5) {
+			grid-column: span 2;
+			justify-self: center;
+		}
+		.image:nth-child(6) {
+			grid-column: span 2;
+			justify-self: center;
 		}
 	</style>
 </head>
