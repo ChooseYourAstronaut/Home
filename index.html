@@ -9,20 +9,35 @@
 		body {
 			margin: 0;
 			padding: 0;
-        		height: 100vh;
+        	height: 100vh;
 			background-color: rgb(80, 80, 80); /* background colour */
             overflow: hidden; /* Hide scroll bars */
 			caret-color: transparent;
+			align-items: center;
 		}
-		.container {
+		.container_top {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			grid-template-rows: repeat(2, 1fr);
+			grid-template-rows: repeat(1, 1fr);
 			gap: 20px;
-			width: 100%;
 			padding: 20px;
 			box-sizing: border-box;
 			caret-color: transparent;
+			align-items: center;
+
+		}
+		.container_bottom {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(1, 1fr);
+			margin-left: calc(100% / 6);
+			gap: 20px;
+			padding: 20px;
+			width: calc(100% / 1.5);
+			box-sizing: border-box;
+			caret-color: transparent;
+			justify-items: center;
+			
 		}
 		.image {
 			width:100%;
@@ -42,23 +57,13 @@
 			display: none;
 			caret-color: transparent;
 		}
-        .close-button {
-			position: absolute;
-			top: 20px;
-            right: 20px;
-            font-size: 36px;
-            color: #ffffff; /* Close button colour */
-			z-index: 999;
-			caret-color: transparent;
-			cursor: pointer;
-		}
         .title {
 			height: 100px;
 			background-color: #333; /* title box colour*/
+			font-family: 'Courier New', Courier, monospace;
 			color: #fff; /* Test colour */
 			display: flex;
             font-size: 36px;
-		font-family: 'Courier New', Courier, monospace;
 			align-items: center;
             justify-content: center; /* Center the title horizontally */
 			padding: 0 20px;
@@ -69,20 +74,24 @@
 </head>
 <body>
     <div class="title">
-	<h1>Choose your astronaut</h1> <!--  The title that is displaced  -->
+	<h1>Choose Your Astronaut</h1> <!--  The title that is displaced  -->
 	</div>
 
 	<!-- This is all of your images and videos from top left along and down src is the images source, 
 		upload images and videos into the same folder as the index.html and add here, same process with the videos -->
-	<div class="container">
-		<img src="laika.JPG" alt="Image 1" class="image" onclick="openVideo('2.webm')">
-    	<img src="felicette.JPG" alt="Image 2" class="image" onclick="openVideo('2.webm')">
-        <img src="albert.JPG" alt="Image 3" class="image" onclick="openVideo('test.webm')">
-        <img src="mousey.JPG" alt="Image 4" class="image" onclick="openVideo('2.webm')">
-        <img src="gray.png" alt="Image 5" class="image">
-		<img src = "mochi.JPG" alt = "Image 6" class = "image" onclick = "openVideo('test.webm')>
+	<div>
+		<div class="container_top">
+			<img src="laika.JPG" alt="Image 1" class="image" onclick="openVideo('test.webm')">
+			<img src="felicette.JPG" alt="Image 2" class="image" onclick="openVideo('2.webm')">
+			<img src="albert.JPG" alt="Image 3" class="image" onclick="openVideo('test.webm')">
+		</div>
+		<div class="container_bottom">
+			<img src="mousey.JPG" alt="Image 4" class="image" onclick="openVideo('test.webm')">
+			<img src="gray.png" alt="Image 5" class="image" onclick="openVideo('2.webm')">
+		</div>
 		<video src="" id="video" controls autoplay onended="closeVideo()"></video>
 	</div>
+
 
 	<!--	This is the code - basically magic :)	-->
 
