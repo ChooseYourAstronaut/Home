@@ -15,21 +15,22 @@
 			caret-color: transparent;
 		}
 		.container {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-template-rows: repeat(2, 1fr);
-			gap: 20px;
-			width: 100%;
-			padding: 20px;
-			box-sizing: border-box;
-			caret-color: transparent;
+   		 display: grid;
+    		grid-template-columns: repeat(5, 1fr); /* changed from repeat(3, 1fr) */
+    		grid-template-rows: repeat(2, 1fr);
+    		gap: 20px;
+    		width: 100%;
+    		padding: 20px;
+    		box-sizing: border-box;
+    		overflow: hidden;
 		}
+
 		.image {
-			width:100%;
-			height:350px;
-			object-fit: cover;
-			caret-color: transparent;
-			cursor: pointer;
+   		 width:100%;
+    		height:350px;
+    		object-fit: cover;
+    		cursor: pointer;
+    		justify-self: center; /* added to center the images */
 		}
 		video {
 			position: fixed;
