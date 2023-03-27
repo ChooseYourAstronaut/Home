@@ -11,7 +11,9 @@
 			margin: 0;
 			padding: 0;
 			height: 100vh;
-			background-color: rgb(80, 80, 80);
+			background-image: url('background.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
 			/* background colour */
 			overflow: hidden;
 			/* Hide scroll bars */
@@ -67,7 +69,7 @@
 
 		.title {
 			height: 100px;
-			background-color: #333;
+			background-color: rgba(51, 51, 51, 0.5);
 			/* title box colour*/
 			font-family: 'Courier New', Courier, monospace;
 			color: #fff;
@@ -88,10 +90,16 @@
 			position: fixed;
 			top: 0;
 			left: 0;
-			background-color: #333;
+			background-color: rgb(51, 51, 51);
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+
+		.loader-text{
+			font-family: 'Courier New', Courier, monospace;
+			color: #fff;
+			font-size: 24px;
 		}
 
 		.spinner-box {
@@ -201,8 +209,7 @@
 		<div class="container_top">
 			<img src="albert.JPG" alt="Image 1" class="image" onclick="openVideo('test.webm')">
 			<img src="felicette.JPG" alt="Image 2" class="image" onclick="openVideo('2.webm')">
-			<img src="laika.JPG" alt="Image 3" class="image"
-				onclick="openVideo('test.webm')">
+			<img src="laika.JPG" alt="Image 3" class="image" onclick="openVideo('test.webm')">
 		</div>
 		<div class="container_bottom">
 			<img src="mochi.JPG" alt="Image 4" class="image" onclick="openVideo('test.webm')">
@@ -214,20 +221,25 @@
 
 	<!--	This is the code - basically magic :)	-->
 	<div class="loader" , id="loader">
-		<div class="spinner-box">
-			<div class="solar-system">
-				<div class="earth-orbit orbit">
-					<div class="planet earth"></div>
-					<div class="venus-orbit orbit">
-						<div class="planet venus"></div>
-						<div class="mercury-orbit orbit">
-							<div class="planet mercury"></div>
-							<div class="sun"></div>
+		<center>
+		<div class="loader-text">
+			<h1>Loading</h1>
+			<div class="spinner-box">
+				<div class="solar-system">
+					<div class="earth-orbit orbit">
+						<div class="planet earth"></div>
+						<div class="venus-orbit orbit">
+							<div class="planet venus"></div>
+							<div class="mercury-orbit orbit">
+								<div class="planet mercury"></div>
+								<div class="sun"></div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</center>
 	</div>
 	<script>
 		let currentVideo = null;
