@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Choose Your Astronaut</title> <!-- The title of the page - this is not the title displayed  -->
 
@@ -9,12 +10,15 @@
 		body {
 			margin: 0;
 			padding: 0;
-        	height: 100vh;
-			background-color: rgb(80, 80, 80); /* background colour */
-            overflow: hidden; /* Hide scroll bars */
+			height: 100vh;
+			background-color: rgb(80, 80, 80);
+			/* background colour */
+			overflow: hidden;
+			/* Hide scroll bars */
 			caret-color: transparent;
 			align-items: center;
 		}
+
 		.container_top {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
@@ -26,6 +30,7 @@
 			align-items: center;
 
 		}
+
 		.container_bottom {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
@@ -37,15 +42,17 @@
 			box-sizing: border-box;
 			caret-color: transparent;
 			justify-items: center;
-			
+
 		}
+
 		.image {
-			width:100%;
-			height:350px;
+			width: 100%;
+			height: 350px;
 			object-fit: cover;
 			caret-color: transparent;
 			cursor: pointer;
 		}
+
 		video {
 			position: fixed;
 			top: 0;
@@ -57,47 +64,174 @@
 			display: none;
 			caret-color: transparent;
 		}
-        .title {
+
+		.title {
 			height: 100px;
-			background-color: #333; /* title box colour*/
+			background-color: #333;
+			/* title box colour*/
 			font-family: 'Courier New', Courier, monospace;
-			color: #fff; /* Test colour */
+			color: #fff;
+			/* Test colour */
 			display: flex;
-            font-size: 36px;
+			font-size: 36px;
 			align-items: center;
-            justify-content: center; /* Center the title horizontally */
+			justify-content: center;
+			/* Center the title horizontally */
 			padding: 0 20px;
 			box-sizing: border-box;
 			caret-color: transparent;
 		}
+
+		.loader {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: #333;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.spinner-box {
+			width: 300px;
+			height: 300px;
+			background-color: transparent;
+		}
+
+		.solar-system {
+			width: 250px;
+			height: 250px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.orbit {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid #fafbfc;
+			border-radius: 50%;
+		}
+
+		.earth-orbit {
+			width: 165px;
+			height: 165px;
+			animation: spin 12s linear 0s infinite;
+		}
+
+		.venus-orbit {
+			width: 120px;
+			height: 120px;
+			animation: spin 7.4s linear 0s infinite;
+		}
+
+		.mercury-orbit {
+			width: 90px;
+			height: 90px;
+			animation: spin 3s linear 0s infinite;
+		}
+
+		.planet {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+		}
+
+		/* how to style planets*/
+		.earth {
+			top: -7px;
+			width: 14px;
+			height: 14px;
+			background-color: #8c7ae6;
+		}
+
+		.venus {
+			top: -6px;
+			width: 12px;
+			height: 12px;
+			background-color: #babbbe;
+		}
+
+		.mercury {
+			top: -5px;
+			width: 10px;
+			height: 10px;
+			background-color: #c23616;
+		}
+
+		.sun {
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			background-color: #fbc531;
+			box-shadow: 0 0 32px #fbc531;
+		}
+
+		/* css animation code.
+		To animate the ball moving from one position to another,
+		set the first keyframe on your animation timeline where 
+		you want the ball to start and a new keyframe further 
+		along the timeline where you'd like it to land. */
+
+		@keyframes spin {
+			from {
+				transform: rotate(0);
+			}
+
+			to {
+				transform: rotate(359deg);
+			}
+		}
 	</style>
 </head>
+
 <body>
-    <div class="title">
-	<h1>Choose Your Astronaut</h1> <!--  The title that is displaced  -->
+	<div class="title">
+		<h1>Choose Your Astronaut</h1> <!--  The title that is displaced  -->
 	</div>
 
 	<!-- This is all of your images and videos from top left along and down src is the images source, 
 		upload images and videos into the same folder as the index.html and add here, same process with the videos -->
 	<div>
 		<div class="container_top">
-			<img src="laika.JPG" alt="Image 1" class="image" onclick="openVideo('test.webm')">
+			<img src="albert.JPG" alt="Image 1" class="image" onclick="openVideo('test.webm')">
 			<img src="felicette.JPG" alt="Image 2" class="image" onclick="openVideo('2.webm')">
-			<img src="albert.JPG" alt="Image 3" class="image" onclick="openVideo('test.webm')">
+			<img src="laika.JPG" alt="Image 3" class="image"
+				onclick="openVideo('test.webm')">
 		</div>
 		<div class="container_bottom">
-			<img src="mousey.JPG" alt="Image 4" class="image" onclick="openVideo('test.webm')">
-			<img src="gray.png" alt="Image 5" class="image" onclick="openVideo('2.webm')">
+			<img src="mochi.JPG" alt="Image 4" class="image" onclick="openVideo('test.webm')">
+			<img src="mousey.JPG" alt="Image 5" class="image" onclick="openVideo('2.webm')">
 		</div>
 		<video src="" id="video" controls autoplay onended="closeVideo()"></video>
 	</div>
 
 
 	<!--	This is the code - basically magic :)	-->
-
+	<div class="loader" , id="loader">
+		<div class="spinner-box">
+			<div class="solar-system">
+				<div class="earth-orbit orbit">
+					<div class="planet earth"></div>
+					<div class="venus-orbit orbit">
+						<div class="planet venus"></div>
+						<div class="mercury-orbit orbit">
+							<div class="planet mercury"></div>
+							<div class="sun"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script>
 		let currentVideo = null;
-		
+
 		// This opens a video 
 		function openVideo(videoUrl) {
 			if (currentVideo !== null) {
@@ -105,26 +239,26 @@
 				currentVideo.currentTime = 0;
 				currentVideo.style.display = 'none';
 			}
-			
+
 			let video = document.getElementById('video');
 			video.src = videoUrl;
 			video.style.display = 'block';
-			
+
 			currentVideo = video;
 
-            // Add close button to the video player
+			// Add close button to the video player
 			let closeButton = document.createElement('div');
 			closeButton.className = 'close-button';
 			closeButton.innerHTML = '&#10006;';
-			closeButton.addEventListener('click', function() {
-                closeButton.remove();
-                closeButton = null;
+			closeButton.addEventListener('click', function () {
+				closeButton.remove();
+				closeButton = null;
 				closeVideo()
 			});
 			currentVideo.parentNode.appendChild(closeButton);
 
 		}
-		
+
 		// this closes the video
 		function closeVideo() {
 			currentVideo.pause();
@@ -132,6 +266,14 @@
 			currentVideo.style.display = 'none';
 			currentVideo = null;
 		}
+		window.addEventListener("load", function () {
+			var elem = document.getElementById("loader");
+			s = elem.style;
+			s.opacity = 1;
+			(function fade(){(s.opacity-=.1)<0?s.display="none":setTimeout(fade,40)})();
+		}, false);
+
 	</script>
 </body>
+
 </html>
